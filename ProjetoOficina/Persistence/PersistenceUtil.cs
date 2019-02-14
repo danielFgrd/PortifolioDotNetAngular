@@ -7,10 +7,10 @@ using System.Data.Odbc;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Reflection;
-using projeto_oficina.Models;
+using ProjetoOficina.Models;
 using System.Data;
 
-namespace projeto_oficina.Persistence
+namespace ProjetoOficina.Persistence
 {
     public abstract class PersistenceUtil
     {

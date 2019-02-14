@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 
-namespace projeto_oficina.PrividerJWT
+namespace ProjetoOficina.ProviderJWT
 {
     public class JwtSecurityKey
     {

@@ -6,7 +6,7 @@ using System.Web;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 
-namespace projeto_oficina.PrividerJWT
+namespace ProjetoOficina.ProviderJWT
 {
     public class TokenJWTBuilder
     {

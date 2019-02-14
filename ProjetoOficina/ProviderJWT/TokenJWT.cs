@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Web;
 
-namespace projeto_oficina.PrividerJWT
+namespace ProjetoOficina.ProviderJWT
 {
     public class TokenJWT
     {

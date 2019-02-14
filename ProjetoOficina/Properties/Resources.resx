@@ -119,6 +119,6 @@
   </resheader>
   <data name="StrConexao" xml:space="preserve">
     <value>server=localhost; port=3306; User Id=root; database=projeto_oficina; password=danielsilvae33;</value>
-    <comment>Strind de conexão My Sql</comment>
+    <comment>String de conexao para MySql</comment>
   </data>
 </root>

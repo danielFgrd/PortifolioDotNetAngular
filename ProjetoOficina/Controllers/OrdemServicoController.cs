@@ -2,70 +2,35 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using projeto_oficina.Persistence;
-using projeto_oficina.Models;
+//using System.Web.Mvc;
+using ProjetoOficina.Persistence;
+using ProjetoOficina.Models;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
-namespace projeto_oficina.Controllers
+
+
+
+namespace ProjetoOficina.Controllers
 {
+
+    [Authorize(Policy = "UsuarioAPI")]
     public class OrdemServicoController : Controller
     {
-        private OrdemServicoPersistence ordemServicoPersistence { get; set; }
-
-
-        // GET: OrdemServico
-        public ActionResult Index()
+        
+        [HttpGet]
+        [Route("api/ApenasUmTeste")]
+        public IActionResult SoUmTeste()
         {
-            return View();
+
+            Usuario usuario = new Usuario();
+
+            return Ok(usuario);
+
         }
 
 
-        public void EspecificaDefeito (int idProprietario, int idVeiculo, string defeitoEspecificado)
-        {
-            ordemServicoPersistence.EspecificarDefeito(idProprietario, idVeiculo, defeitoEspecificado);
-        }
 
-        public void AprovarRecusarOrcamento(int id, int idStatusOrcamento)
-        {
-            ordemServicoPersistence.AprovarRecusarOrcamento(id, idStatusOrcamento);
-        }
-        public void LiberarVeiculo(int id, string obsLiberacao)
-        {
-            ordemServicoPersistence.LiberarVeiculo(id, obsLiberacao);
-        }
-
-        public void PassarOrcamento(int id, double valor)
-        {
-            ordemServicoPersistence.PassarOrcamento(id, valor);
-        }
-
-        public void AvaliarSituacaoVeiculo(int id, string avaliacaoMecanico)
-        {
-            ordemServicoPersistence.AvaliarSituacaoVeiculo(id, avaliacaoMecanico);
-        }
-
-        public List<OrdemServico> ListarPorProprietario(int idProprietario)
-        {
-            ordemServicoPersistence.ListarPorProprietario(idProprietario);
-            return null;
-        }
-
-        public JsonResult Listar()
-        {
-            ordemServicoPersistence = new OrdemServicoPersistence();
-            OrdemServico ordemServico = new OrdemServico();
-            ordemServico.Id = 1;
-            ordemServico.AvaliacaoMecanico = "fonuncia";
-            List<OrdemServico> list = ordemServicoPersistence.Listar();
-            list.Add(ordemServico);
-            var json = JsonConvert.SerializeObject(list);
-            return Json(json, JsonRequestBehavior.AllowGet);
-        }
-
-        public void AplicarReparo(int id, int idEstado, string descricao)
-        {
-            ordemServicoPersistence.AplicarReparo(id, idEstado, descricao);
-        }
     }
 }

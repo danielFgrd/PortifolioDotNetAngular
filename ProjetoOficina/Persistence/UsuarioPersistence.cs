@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using projeto_oficina.Models;
+using ProjetoOficina.Models;
 
-namespace projeto_oficina.Persistence
+namespace ProjetoOficina.Persistence
 {
     public class UsuarioPersistence
     {

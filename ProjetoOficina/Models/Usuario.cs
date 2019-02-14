@@ -1,5 +1,5 @@
 ﻿
-namespace projeto_oficina.Models
+namespace ProjetoOficina.Models
 {
     public class Usuario
     {
