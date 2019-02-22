@@ -1,2 +1,12 @@
-<app-header></app-header>
-<app-menu-mecanico></app-menu-mecanico>
+<app-header [hidden]="showTemplate == 0"></app-header>
+<app-menu-mecanico [hidden]="showTemplate != 2"></app-menu-mecanico>
+<app-menu-cliente [hidden]="showTemplate != 1"></app-menu-cliente>
+<div class="content_wrapper">
+  <section class="content_header">
+  </section>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
+

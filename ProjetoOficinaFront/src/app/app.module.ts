@@ -1,24 +1,47 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './security/login/login.component';
+import { UsuarioService } from './services/usuario.service';
 import { HeaderComponent } from './components/header/header.component';
-import { MenuComponent } from './components/menu/menu.component';
 import { MenuMecanicoComponent } from './components/menu-mecanico/menu-mecanico.component';
+import { MenuClienteComponent } from './components/menu-cliente/menu-cliente.component';
+import { routes } from './app.routes';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SharedService } from './services/shared.service';
+import { AuthInterceptor } from './security/auth.interceptor';
+import { AuthGuard } from './security/auth.guard';
+import { HomeComponent } from './components/home/home.component';
+import { NovoUsuarioComponent } from './components/novo-usuario/novo-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HeaderComponent,
-    MenuComponent,
-    MenuMecanicoComponent
+    MenuMecanicoComponent,
+    MenuClienteComponent,
+    HomeComponent,
+    NovoUsuarioComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    routes
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    AuthGuard,
+    UsuarioService,
+    SharedService,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
