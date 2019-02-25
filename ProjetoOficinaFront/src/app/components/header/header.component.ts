@@ -8,18 +8,12 @@ import { Usuario } from 'src/app/models/usuario.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  teste : string;
   constructor(private shared: SharedService) { 
     this.shared = SharedService.getInstance();
     
-    
-   
   }
 
-  ngOnInit() {
-    this.teste = 'teste';
-    
+  ngOnInit() {  
   }
 
 }

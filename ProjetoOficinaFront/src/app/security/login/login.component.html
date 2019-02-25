@@ -6,7 +6,7 @@
     </div>
   
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="login()">
-      <div class="alert alert-error" role="alert" *ngIf="messages">
+      <div class="alert alert-error" role="alert" *ngIf="message">
         <strong> Usuario ou senha inválida!</strong>
       </div>
 

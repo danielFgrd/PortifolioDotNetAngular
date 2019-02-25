@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.usuarioService.login(this.usuario).subscribe((userAuthentication: CurrentUser) =>{
       this.shared.token = userAuthentication.token;
       this.shared.usuario = userAuthentication.usuario;
-      this.shared.showTemplate.emit(1);
+      this.shared.showTemplate.emit(this.shared.usuario.idPoliticaAcesso);
       this.router.navigate(['/'])
     }, err => {
       this.shared.token = null;

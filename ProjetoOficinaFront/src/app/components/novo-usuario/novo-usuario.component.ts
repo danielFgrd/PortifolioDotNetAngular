@@ -28,7 +28,7 @@ export class NovoUsuarioComponent implements OnInit {
   findById(id: number){
     this.usuarioService.buscarPorId(id).subscribe((usuario: Usuario) => {
       this.usuario = usuario;
-      this.usuario.Senha = '';
+      this.usuario.senha = '';
     })
   }
 

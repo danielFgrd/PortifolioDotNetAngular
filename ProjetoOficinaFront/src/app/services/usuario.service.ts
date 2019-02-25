@@ -17,11 +17,11 @@ export class UsuarioService {
   }
 
   buscarPorId(id: number){
-    return this.http.post(this.API+'/api/bucarPoId', id);
+    return this.http.post(this.API+'/api/bucarPorId', id);
   }
 
   cadastrar(usuario: Usuario){
     alert("acessou outro metodo!");
-    return this.http.post('http://localhost:5000/api/cadastrar', usuario);
+    return this.http.post(this.API+'/api/cadastrar', usuario);
   }
 }
