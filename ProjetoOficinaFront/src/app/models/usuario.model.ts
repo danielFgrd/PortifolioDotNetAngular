@@ -1,13 +1,13 @@
 export class Usuario {
-  Id: number;
-  IdPoliticaAcesso: number;
-  NomeCompleto: string;
-  NomeUsuario: string;
-  Senha: string;
-  Cpf: string;
-  Telefone: string;
-  Endereco: string;
-  Cep: string;
-  Bairro: string;
-  Cidade: string;
+  id: number;
+  idPoliticaAcesso: number;
+  nomeCompleto: string;
+  nomeUsuario: string;
+  senha: string;
+  cpf: string;
+  telefone: string;
+  endereco: string;
+  cep: string;
+  bairro: string;
+  cidade: string;
 }

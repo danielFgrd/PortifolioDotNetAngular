@@ -6,16 +6,18 @@ import { Usuario } from '../models/usuario.model';
 @Injectable()
 export class UsuarioService {
 
+  private readonly API : string = 'http://localhost:5000';
+
   constructor(
     private http: HttpClient
   ) { }
 
   login(usuario: Usuario){
-    return this.http.post('http://localhost:5000/api/login', usuario);
+    return this.http.post(this.API+'/api/login', usuario);
   }
 
   buscarPorId(id: number){
-    return this.http.post('http://localhost:5000/api/bucarPoId', id);
+    return this.http.post(this.API+'/api/bucarPoId', id);
   }
 
   cadastrar(usuario: Usuario){
