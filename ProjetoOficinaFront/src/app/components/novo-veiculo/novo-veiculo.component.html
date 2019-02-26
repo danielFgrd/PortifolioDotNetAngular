@@ -12,7 +12,7 @@
 
       <div class="box-body">
         <div class="form-group">
-          <label for="inputTipo" class="col-sm-4 control-label">Tipo de veículo:</label>
+          <label for="inputTipo" class="col-sm-4 control-label">Tipo do veículo:</label>
 
           <div class="col-sm-8">
             <input type="text"
@@ -20,26 +20,48 @@
                    class="form-control"
                    id="inputTipo"
                    name="Tipo"
-                   placeholder="Digite o tipo de veiculo"
+                   placeholder="Digite o tipo do veiculo."
                    required/>
           </div>
         </div>
         <div class="box-body">
           <div class="form-group">
-            <label for="inputTipo" class="col-sm-4 control-label">Tipo de veículo:</label>
+            <label for="inputMarca" class="col-sm-4 control-label">Marca do veículo:</label>
   
             <div class="col-sm-8">
               <input type="text"
-                     [(ngModel)]="veiculo.tipo"
+                     [(ngModel)]="veiculo.marca"
                      class="form-control"
-                     id="inputTipo"
-                     name="Tipo"
-                     placeholder="Digite o tipo de veiculo"
+                     id="inputMarca"
+                     name="Marca"
+                     placeholder="Digite a marca do veiculo."
                      required/>
             </div>
           </div>
         </div>
-                
+
+
+        <div class="box-body">
+          <div class="form-group">
+            <label for="inputModelo" class="col-sm-4 control-label">Modelo do veículo:</label>
+  
+            <div class="col-sm-8">
+              <input type="text"
+                     [(ngModel)]="veiculo.modelo"
+                     class="form-control"
+                     id="inputModelo"
+                     name="Modelo"
+                     placeholder="Digite o modelo do veiculo."
+                     required/>
+            </div>
+          </div>
+        </div>
+             
+        <div class="box-footer">
+          <button type="submit" id="btnVoltar" [routerLink]="['/login']" class="btn btn-default">Voltar</button>
+          <button type="submit" id="btnCadastrar" [disabled]="!form.valid" class="btn btn-info pull-right">Cadastar</button>
+        </div>
+
       </div>
     </form>
   </div>

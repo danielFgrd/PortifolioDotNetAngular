@@ -1,15 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Web.Http;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ProjetoOficina.ProviderJWT;
-using ProjetoOficina.Models;
-using ProjetoOficina.Services;
 using Microsoft.AspNetCore.Cors;
-using ProjetoOficina.Responses;
+using Microsoft.AspNetCore.Mvc;
+using ProjetoOficina.Models;
+using ProjetoOficina.ProviderJWT;
+using ProjetoOficina.Services;
 
 namespace ProjetoOficina.Controllers
 {

@@ -31,11 +31,12 @@ export class NovoVeiculoComponent implements OnInit {
   }
 
   cadastrar(){
+    this.veiculo.idProprietario = this.shared.usuario.id;
     this.veiculoService.cadastrar(this.veiculo).subscribe(() => {
       this.form.resetForm();
       this.showMessage({
         type: 'success',
-        text: 'Registrado o '+ this.usuario.nomeCompleto+ ' com sucesso!'
+        text: this.veiculo.tipo+' cadastrado com sucesso!'
       });
       this.route.navigate['login'];
     }, err => {
