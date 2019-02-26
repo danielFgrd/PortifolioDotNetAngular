@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { Usuario } from 'src/app/models/usuario.model';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -17,12 +17,12 @@ export class NovoUsuarioComponent implements OnInit {
   form: NgForm;
   private usuario = new Usuario();
   shared: SharedService;
-  mensagen: {};
+  message: {};
   classCss: {};
 
   constructor(
     private usuarioService: UsuarioService,
-    private route: ActivatedRoute
+    private route: Router
   ) { }
 
   findById(id: number){
@@ -36,7 +36,35 @@ export class NovoUsuarioComponent implements OnInit {
   }
 
   cadastrar(){
-    alert('Acessou o método!')
-    this.usuarioService.cadastrar(this.usuario);
+    this.usuarioService.cadastrar(this.usuario).subscribe(() => {
+      this.form.resetForm();
+      this.showMessage({
+        type: 'success',
+        text: 'Registrado o '+ this.usuario.nomeCompleto+ ' com sucesso!'
+      });
+      this.route.navigate['login'];
+    }, err => {
+      this.showMessage({
+        type: 'error',
+        text: 'Falha ao cadastrar'
+      });
+    });
+      
+  }
+
+  private showMessage(message: {type: string , text: string}): void{
+    this.message = message;
+    this.buildClasses(message.type);
+    setTimeout(() => {
+      this.message= undefined;
+    }, 3000
+    );
+  }
+
+  private buildClasses(type: string ): void {
+    this.classCss = {
+      'alert' : true
+    }
+    this.classCss['alert-'+type] = true; 
   }
 }

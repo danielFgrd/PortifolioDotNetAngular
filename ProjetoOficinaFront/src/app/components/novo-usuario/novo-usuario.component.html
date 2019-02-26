@@ -6,8 +6,8 @@
     </div>
   
     <form class="form-horizontal" #form="ngForm" (ngSubmit)="cadastrar()">
-      <div class="alert alert-error" role="alert" *ngIf="messages">
-        <strong> Usuario ou senha inválida!</strong>
+      <div class="alert" role="alert" *ngIf="message">
+        <strong> {{ message.text }}</strong>
       </div>
 
       <div class="box-body">
@@ -59,7 +59,7 @@
 
             <div class="col-sm-8">
               <select 
-              [(ngModel)]="usuario.politiAcesso"
+              [(ngModel)]="usuario.idPoliticaAcesso"
               class="form-control"
               id="inputPoliticaAcesso"
               name="PoliticaAcesso"
@@ -200,7 +200,7 @@
           <!-- /.box-body -->
         <div class="box-footer">
           <button type="submit" id="btnVoltar" [routerLink]="['/login']" class="btn btn-default">Voltar</button>
-          <button type="submit" id="btnCadastrar" [disabled] class="btn btn-info pull-right">Cadastar</button>
+          <button type="submit" id="btnCadastrar" [disabled]="!form.valid" class="btn btn-info pull-right">Cadastar</button>
         </div>
         
       </div>

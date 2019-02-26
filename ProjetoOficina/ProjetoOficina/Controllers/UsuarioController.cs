@@ -46,7 +46,6 @@ namespace ProjetoOficina.Controllers
 
         [Route("/api/cadastrar")]
         [HttpPost]
-        [AllowAnonymous]
         [EnableCors("MyPolicy")]
         [Produces("application/json")]
         public IActionResult Cadastrar([FromBody] Usuario usuario)

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { PROJETO_OFICINA_API } from './projetooficina.api';
 import { Usuario } from '../models/usuario.model';
 
 @Injectable()
@@ -21,7 +20,6 @@ export class UsuarioService {
   }
 
   cadastrar(usuario: Usuario){
-    alert("acessou outro metodo!");
     return this.http.post(this.API+'/api/cadastrar', usuario);
   }
 }
