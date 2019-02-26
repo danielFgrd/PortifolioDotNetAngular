@@ -1,0 +1,47 @@
+<div class="col-md-4" style="position:absolute; left:33%; top:100px">
+
+  <div class="box box-info" style="width:500px">
+    <div class="box-header with-border">
+      <h3 class="box-title">Cadastrar Veículo</h3>
+    </div>
+  
+    <form class="form-horizontal" #form="ngForm" (ngSubmit)="cadastrar()">
+      <div class="alert" role="alert" *ngIf="message">
+        <strong> {{ message.text }}</strong>
+      </div>
+
+      <div class="box-body">
+        <div class="form-group">
+          <label for="inputTipo" class="col-sm-4 control-label">Tipo de veículo:</label>
+
+          <div class="col-sm-8">
+            <input type="text"
+                   [(ngModel)]="veiculo.tipo"
+                   class="form-control"
+                   id="inputTipo"
+                   name="Tipo"
+                   placeholder="Digite o tipo de veiculo"
+                   required/>
+          </div>
+        </div>
+        <div class="box-body">
+          <div class="form-group">
+            <label for="inputTipo" class="col-sm-4 control-label">Tipo de veículo:</label>
+  
+            <div class="col-sm-8">
+              <input type="text"
+                     [(ngModel)]="veiculo.tipo"
+                     class="form-control"
+                     id="inputTipo"
+                     name="Tipo"
+                     placeholder="Digite o tipo de veiculo"
+                     required/>
+            </div>
+          </div>
+        </div>
+                
+      </div>
+    </form>
+  </div>
+</div>
+

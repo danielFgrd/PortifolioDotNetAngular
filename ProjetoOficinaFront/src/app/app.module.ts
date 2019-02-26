@@ -14,6 +14,8 @@ import { AuthInterceptor } from './security/auth.interceptor';
 import { AuthGuard } from './security/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { NovoUsuarioComponent } from './components/novo-usuario/novo-usuario.component';
+import { NovoVeiculoComponent } from './components/novo-veiculo/novo-veiculo.component';
+import { VeiculoService } from './services/veiculo.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NovoUsuarioComponent } from './components/novo-usuario/novo-usuario.com
     MenuMecanicoComponent,
     MenuClienteComponent,
     HomeComponent,
-    NovoUsuarioComponent
+    NovoUsuarioComponent,
+    NovoVeiculoComponent
   ],
   imports: [
     FormsModule,
@@ -38,6 +41,7 @@ import { NovoUsuarioComponent } from './components/novo-usuario/novo-usuario.com
       multi: true
     },
     AuthGuard,
+    VeiculoService,
     UsuarioService,
     SharedService,
     HttpClient

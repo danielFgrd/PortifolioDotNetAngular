@@ -1,1 +1,1 @@
-export const PROJETO_OFICINA_API: string = 'http://localhost:5000';
+export const API : string = 'http://localhost:5000';

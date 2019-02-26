@@ -44,7 +44,7 @@ namespace ProjetoOficina.Controllers
             return Ok(currentUser);
         }
 
-        [Route("/api/cadastrar")]
+        [Route("/api/cadastrar/usuario")]
         [HttpPost]
         [EnableCors("MyPolicy")]
         [Produces("application/json")]
